@@ -1,0 +1,221 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color tokens to match sophisticated exchange design */
+  --background: oklch(0.05 0.01 240); /* Deep charcoal background */
+  --foreground: oklch(0.98 0 0); /* Pure white text */
+  --card: oklch(0.08 0.02 240); /* Dark card background */
+  --card-foreground: oklch(0.95 0 0); /* Off-white card text */
+  --popover: oklch(0.08 0.02 240); /* Dark popover */
+  --popover-foreground: oklch(0.95 0 0); /* Off-white popover text */
+  --primary: oklch(0.55 0.18 260); /* Sophisticated deep blue */
+  --primary-foreground: oklch(0.98 0 0); /* White text on primary */
+  --secondary: oklch(0.12 0.03 240); /* Refined dark secondary */
+  --secondary-foreground: oklch(0.9 0 0); /* Light secondary text */
+  --muted: oklch(0.1 0.02 240); /* Subtle muted background */
+  --muted-foreground: oklch(0.6 0.01 240); /* Sophisticated muted text */
+  --accent: oklch(0.65 0.15 200); /* Elegant teal accent */
+  --accent-foreground: oklch(0.98 0 0); /* White accent text */
+  --destructive: oklch(0.55 0.2 20); /* Refined red destructive */
+  --destructive-foreground: oklch(0.98 0 0); /* White destructive text */
+  --border: oklch(0.15 0.03 240); /* Subtle borders */
+  --input: oklch(0.1 0.02 240); /* Dark input background */
+  --ring: oklch(0.55 0.18 260 / 0.4); /* Subtle ring with opacity */
+  --chart-1: oklch(0.55 0.18 260); /* Primary chart color */
+  --chart-2: oklch(0.65 0.15 200); /* Teal chart color */
+  --chart-3: oklch(0.6 0.16 300); /* Purple chart color */
+  --chart-4: oklch(0.7 0.12 80); /* Gold chart color */
+  --chart-5: oklch(0.58 0.17 340); /* Rose chart color */
+  --radius: 0.75rem;
+  --sidebar: oklch(0.05 0.01 240); /* Dark sidebar */
+  --sidebar-foreground: oklch(0.95 0 0); /* Light sidebar text */
+  --sidebar-primary: oklch(0.55 0.18 260); /* Primary sidebar */
+  --sidebar-primary-foreground: oklch(0.98 0 0); /* White sidebar primary text */
+  --sidebar-accent: oklch(0.65 0.15 200); /* Teal sidebar accent */
+  --sidebar-accent-foreground: oklch(0.98 0 0); /* White sidebar accent text */
+  --sidebar-border: oklch(0.15 0.03 240); /* Subtle sidebar border */
+  --sidebar-ring: oklch(0.55 0.18 260 / 0.4); /* Subtle sidebar ring */
+}
+
+.dark {
+  /* Dark mode with enhanced sophisticated theme */
+  --background: oklch(0.03 0.01 240);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.06 0.02 240);
+  --card-foreground: oklch(0.95 0 0);
+  --popover: oklch(0.06 0.02 240);
+  --popover-foreground: oklch(0.95 0 0);
+  --primary: oklch(0.6 0.18 260);
+  --primary-foreground: oklch(0.98 0 0);
+  --secondary: oklch(0.1 0.03 240);
+  --secondary-foreground: oklch(0.9 0 0);
+  --muted: oklch(0.08 0.02 240);
+  --muted-foreground: oklch(0.55 0.01 240);
+  --accent: oklch(0.7 0.15 200);
+  --accent-foreground: oklch(0.06 0.02 240);
+  --destructive: oklch(0.55 0.2 20);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.12 0.03 240);
+  --input: oklch(0.08 0.02 240);
+  --ring: oklch(0.6 0.18 260 / 0.4);
+  --chart-1: oklch(0.6 0.18 260);
+  --chart-2: oklch(0.7 0.15 200);
+  --chart-3: oklch(0.65 0.16 300);
+  --chart-4: oklch(0.75 0.12 80);
+  --chart-5: oklch(0.63 0.17 340);
+  --sidebar: oklch(0.03 0.01 240);
+  --sidebar-foreground: oklch(0.95 0 0);
+  --sidebar-primary: oklch(0.6 0.18 260);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.1 0.03 240);
+  --sidebar-accent-foreground: oklch(0.95 0 0);
+  --sidebar-border: oklch(0.12 0.03 240);
+  --sidebar-ring: oklch(0.6 0.18 260 / 0.4);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .gradient-bg {
+    background: radial-gradient(circle at 20% 80%, oklch(0.15 0.08 280 / 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, oklch(0.12 0.06 200 / 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 40% 40%, oklch(0.1 0.04 320 / 0.2) 0%, transparent 50%),
+      linear-gradient(
+        135deg,
+        oklch(0.02 0.005 240) 0%,
+        oklch(0.04 0.01 250) 25%,
+        oklch(0.03 0.008 230) 50%,
+        oklch(0.05 0.012 260) 75%,
+        oklch(0.02 0.005 245) 100%
+      );
+  }
+
+  .card-gradient {
+    background: radial-gradient(circle at 30% 70%, oklch(0.12 0.04 260 / 0.3) 0%, transparent 60%),
+      linear-gradient(
+        135deg,
+        oklch(0.06 0.015 240) 0%,
+        oklch(0.08 0.02 250) 30%,
+        oklch(0.07 0.018 230) 70%,
+        oklch(0.09 0.022 260) 100%
+      );
+  }
+
+  .hero-gradient {
+    background: radial-gradient(ellipse at 50% 0%, oklch(0.08 0.03 280 / 0.4) 0%, transparent 70%),
+      radial-gradient(ellipse at 0% 100%, oklch(0.06 0.02 200 / 0.3) 0%, transparent 70%),
+      linear-gradient(
+        180deg,
+        oklch(0.01 0.002 240) 0%,
+        oklch(0.03 0.008 250) 20%,
+        oklch(0.04 0.01 230) 40%,
+        oklch(0.05 0.012 260) 60%,
+        oklch(0.03 0.008 245) 80%,
+        oklch(0.02 0.005 240) 100%
+      );
+  }
+
+  .mesh-gradient {
+    background: radial-gradient(circle at 25% 25%, oklch(0.1 0.05 280 / 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 75% 75%, oklch(0.08 0.04 200 / 0.3) 0%, transparent 50%),
+      radial-gradient(circle at 75% 25%, oklch(0.06 0.03 320 / 0.2) 0%, transparent 50%),
+      radial-gradient(circle at 25% 75%, oklch(0.09 0.04 180 / 0.3) 0%, transparent 50%), oklch(0.02 0.005 240);
+  }
+
+  .aurora-bg {
+    background: linear-gradient(45deg, transparent 30%, oklch(0.08 0.04 280 / 0.1) 50%, transparent 70%),
+      linear-gradient(-45deg, transparent 30%, oklch(0.06 0.03 200 / 0.15) 50%, transparent 70%),
+      linear-gradient(90deg, oklch(0.02 0.005 240) 0%, oklch(0.04 0.01 250) 50%, oklch(0.03 0.008 230) 100%);
+  }
+
+  /* Added exchange-specific utility classes */
+  .exchange-gradient {
+    background: radial-gradient(circle at 20% 20%, oklch(0.1 0.05 260 / 0.4) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, oklch(0.08 0.04 200 / 0.3) 0%, transparent 50%),
+      linear-gradient(135deg, oklch(0.03 0.008 240) 0%, oklch(0.05 0.012 250) 100%);
+  }
+
+  .swap-card-gradient {
+    background: linear-gradient(135deg, oklch(0.08 0.02 240) 0%, oklch(0.1 0.025 250) 100%);
+  }
+
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .scrollbar-hide {
+    -webkit-scrollbar: none;
+    -webkit-scrollbar-track: none;
+    -webkit-scrollbar-thumb: none;
+
+    /* Hide scrollbar for IE and Edge legacy */
+    -ms-overflow-style: none;
+
+    /* Hide scrollbar for Firefox */
+    scrollbar-width: none;
+    scrollbar-color: transparent transparent;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    width: 0;
+    height: 0;
+    background: transparent;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar-track {
+    display: none;
+    background: transparent;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar-thumb {
+    display: none;
+    background: transparent;
+  }
+}
